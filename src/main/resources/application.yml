@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: s3-service
+  cloud:
+    aws:
+      s3:
+        endpoint: https://test-s3-service-bucket.s3.ap-south-1.amazonaws.com
+        region: ap-south-1
+        bucket:
+         name: test-s3-service-bucket
+      credentials:
+        access-key: AKIAWON4OXQ7GLTRXJQV
+        secret-key: 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
+server:
+  port: 8080
+
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        properties:
+          orderId:
+            type: integer
+          userId:
+            type: integer
+          fileName:
+            type: string
+            format: binary
+springdoc:
+  api-docs:
+    path: /swagger-ui.html
